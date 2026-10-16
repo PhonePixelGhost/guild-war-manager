@@ -253,12 +253,42 @@ export default function App() {
 
 function LandingPage() {
   return (
-    <div className="min-h-screen bg-game-grid flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-amber-500">Guild War Manager</h1>
-      <p className="text-slate-400 mt-4">จัดทีมสงครามกิลด์ จัดปาร์ตี้ด้วย Drag & Drop</p>
-      <a href="/login" className="mt-6 px-6 py-3 bg-amber-500 text-black rounded-lg font-bold">
-        Sign In with Discord
-      </a>
+    <div className="min-h-screen bg-game-grid flex flex-col items-center justify-center p-4">
+      <div className="text-center max-w-2xl">
+        <img src="/favicon.png" alt="Guild War Manager" className="h-32 w-auto mx-auto mb-6 drop-shadow-2xl" onError={(e) => e.target.style.display = 'none'} />
+        <h1 className="text-5xl font-bold text-amber-500 mb-4" style={{ fontFamily: "'Cinzel', serif" }}>
+          Guild War Manager
+        </h1>
+        <p className="text-xl text-slate-300 mb-8">
+          จัดทีมสงครามกิลด์ จัดปาร์ตี้ด้วย Drag & Drop และบันทึกสถิติการต่อสู้
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/login" className="px-8 py-4 bg-amber-500 text-black rounded-lg font-bold text-lg hover:bg-amber-600 transition-colors">
+            เริ่มต้นใช้งาน
+          </a>
+          <a href="#features" className="px-8 py-4 bg-slate-700 text-white rounded-lg font-bold text-lg hover:bg-slate-600 transition-colors">
+            ดูฟีเจอร์
+          </a>
+        </div>
+      </div>
+      
+      <div id="features" className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
+        <div className="bg-game-card border border-game-border rounded-lg p-6">
+          <div className="text-3xl mb-3">⚔️</div>
+          <h3 className="text-lg font-bold text-amber-500 mb-2">จัดการทีมสงคราม</h3>
+          <p className="text-slate-400 text-sm">จัดปาร์ตี้ด้วย Drag & Drop อย่างง่ายดาย</p>
+        </div>
+        <div className="bg-game-card border border-game-border rounded-lg p-6">
+          <div className="text-3xl mb-3">📊</div>
+          <h3 className="text-lg font-bold text-amber-500 mb-2">บันทึกสถิติ</h3>
+          <p className="text-slate-400 text-sm">ติดตามผลงานของสมาชิกในกิลด์</p>
+        </div>
+        <div className="bg-game-card border border-game-border rounded-lg p-6">
+          <div className="text-3xl mb-3">🎯</div>
+          <h3 className="text-lg font-bold text-amber-500 mb-2">Discord Integration</h3>
+          <p className="text-slate-400 text-sm">Check-in และแจ้งเตือนผ่าน Discord</p>
+        </div>
+      </div>
     </div>
   )
 }
